@@ -16,6 +16,7 @@ Dim oShell
 On Error Resume Next
 Set oShell = WScript.CreateObject("WScript.Shell")
 If Err.Number <> 0 Then
+	MsgBox "VBS: " & Err.Number, 65, "VB"
 	Wscript.Quit
 End If
 'oShell.run "cmd.exe /C copy ""S:Claims\Sound.wav"" ""C:\WINDOWS\Media\Sound.wav""",1,true

@@ -26,7 +26,7 @@
 Dim wshshell
 Set wshshell = WScript.CreateObject("WScript.Shell")
 Set WSHEnv = WSHShell.Environment("Process")
-wshshell.run """C:\Program Files\Mozilla Firefox\firefox.exe"" https://prod.citytime.nycnet/",1,False
+wshshell.run """C:\Program Files\Mozilla Firefox\firefox.exe""https://prod.citytime.nycnet/",1,False
 
 MsgBox "Hello World!", 65, "MsgBox Example"
 
