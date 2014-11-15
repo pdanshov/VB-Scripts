@@ -20,7 +20,7 @@ If Err.Number <> 0 Then
 	Wscript.Quit
 End If
 'oShell.run "cmd.exe /C copy ""S:Claims\Sound.wav"" ""C:\WINDOWS\Media\Sound.wav""",1,true
-oShell.run "c:\windows\system32\cmd.exe /c wasset unattend receive 0003",1,true
+oShell.run "c:\windows\system32\cmd.exe /C cd C:\ASSET && wasset unattend receive 0003",1,true
 On Error Goto 0
 Set oShell = Nothing
 
