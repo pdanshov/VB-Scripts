@@ -65,26 +65,26 @@ Counter=0
 Dim fso, MyFile, HdrFile
 Set fso = CreateObject("Scripting.FileSystemObject")
 Set MyFile = fso.CreateTextFile("C:\MinGW\msys\1.0\TPPC_FA.txt", True)
-Set HdrFile = fso.CreateTextFile("C:\MinGW\msys\1.0\TPPC_FA_HDR.txt", True)
+''Set HdrFile = fso.CreateTextFile("C:\MinGW\msys\1.0\TPPC_FA_HDR.txt", True)
 
-For i = 0 To rs.Fields.Count - 1
-	If ((i = 3) Or (i = 11) Or (i = 17) Or (i = 18)) Then
-		headLine = headLine & rs.Fields(i).Name & " "
-	End If
-	''MyFile.WriteLine(rs.Fields(i).Name)
-	'If (i = OrderedArray(Counter)) Then
-	'	headLine = headLine & rs.Fields(i).Name & "     "
-	'End If
-Next
+''For i = 0 To rs.Fields.Count - 1
+''	If ((i = 3) Or (i = 11) Or (i = 17) Or (i = 18)) Then
+''		headLine = headLine & rs.Fields(i).Name & " "
+''	End If
+''	''MyFile.WriteLine(rs.Fields(i).Name)
+''	'If (i = OrderedArray(Counter)) Then
+''	'	headLine = headLine & rs.Fields(i).Name & "     "
+''	'End If
+''Next
 
-Dim headSplit
-headLine = headLine
+''Dim headSplit
+''headLine = headLine
 'MsgBox(headLine)
-headSplit = Split(headLine, " ")
+''headSplit = Split(headLine, " ")
 'MsgBox(headSplit(2))
 Dim strSplit
-headLine = headSplit(2) & " " & headSplit(1) & " " & headSplit(3) & " " & headSplit(0)
-HdrFile.WriteLine(headLine)
+'''headLine = headSplit(2) & " " & headSplit(1) & " " & headSplit(3) & " " & headSplit(0)
+''HdrFile.WriteLine(headLine)
 
 Do Until rs.EOF
 	For i = 0 To rs.Fields.Count - 1
@@ -93,7 +93,7 @@ Do Until rs.EOF
 		End If
 	Next
 	strSplit = Split(strResult, " ")
-	strResult = strSplit(2) & " " & strSplit(1) & " " & strSplit(3) & " " & strSplit(0)
+	strResult = strSplit(4) & " " & strSplit(3) & " " & strSplit(5) & " " & strSplit(0) & "_" & strSplit(1) & strSplit(2)
 	'Print MyFile, strResult
 	MyFile.WriteLine(strResult)
 	strResult = ""
@@ -103,5 +103,5 @@ rs.Close
 Set rs = Nothing
 'MyFile.WriteLine("This is a test.")
 MyFile.Close
-HdrFile.Close
+''HdrFile.Close
 
