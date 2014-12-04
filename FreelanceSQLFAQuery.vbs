@@ -179,7 +179,7 @@ Else
 			  'WScript.Echo strTemp & Space(intSpace - Len(strTemp)) & Now
 			  objFile.Write strTemp2 & Space(intSpace - Len(strTemp2))
 			Next
-			'objFile.Write vbCrLf
+			objFile.Write vbCrLf
 		end if
 		Recordset.MoveNext
 	Loop
